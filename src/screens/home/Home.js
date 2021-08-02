@@ -35,10 +35,10 @@ const styles = theme => ({
     },
     noRestaurantsText: {
         textAlign: 'center',
-        padding: '20px'
+        padding: '20px',
     },
     cardContentHolder: {
-        padding: '18px'
+        padding: '18px',
     },
     restaurantTitleHolder: {
         marginBottom: '35px',
@@ -62,9 +62,8 @@ const styles = theme => ({
         padding: '5px',
     },
     restaurantPriceHolder: {
-
+        fontWeight : '500',
     }
-
 });
 
 class Home extends Component {
