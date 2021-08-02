@@ -21,7 +21,7 @@ class Home extends Component {
         const {classes} = this.props;
         return (
             <div>
-                <Header title="Food Ordering App" showSearchBox = "true" history={this.props.history} restaurantSearchHandler={this.restaurantSearchHandler} />
+                <Header title="Food Ordering App" showSearchBox = {true} history={this.props.history} restaurantSearchHandler={this.restaurantSearchHandler} />
                 <div>
                 </div>
             </div>
