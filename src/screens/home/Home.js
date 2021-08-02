@@ -41,10 +41,6 @@ const styles = theme => ({
     restaurantTitleHolder: {
         marginBottom: '35px',
     },
-    restaurantCategoriesHolder: {
-        marginTop: '15px',
-        marginBottom: '25px',
-    },
     restaurantAvgRatingHolder: {
         display: 'flex',
         alignItems: 'center',
@@ -151,7 +147,7 @@ class Home extends Component {
                                                         {restaurant.restaurant_name}
                                                     </Typography>
                                                 </div>
-                                                <div className={classes.restaurantCategoriesHolder}>
+                                                <div className="restaurantCategoriesHolder">
                                                     <Typography variant='subtitle1' style={{ fontSize: '17px', lineHeight: '25px' }}>
                                                         {restaurant.categories}
                                                     </Typography>
