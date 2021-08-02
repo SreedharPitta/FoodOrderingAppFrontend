@@ -33,7 +33,7 @@ const styles = theme => ({
     },
     noRestaurantsText: {
         textAlign: 'center',
-        padding: '20px 0px',
+        padding: '20px 25px',
     },
     cardContentHolder: {
         padding: '18px',
@@ -69,7 +69,8 @@ class Home extends Component {
         super();
         this.state = {
             restaurants: [],
-            restaurantsCopy: []
+            restaurantsCopy: [],
+            userSearch: false
         }
     }
 
@@ -104,7 +105,8 @@ class Home extends Component {
             if (this.readyState === 4) {
                 if (!JSON.parse(this.responseText).restaurants) {
                     that.setState({
-                        restaurants: null
+                        restaurants: null,
+                        userSearch: true
                     });
                 } else {
                     that.setState({
@@ -172,7 +174,7 @@ class Home extends Component {
                                 </ImageListItem>
                             ))}
                         </ImageList>
-                        : <div className={classes.noRestaurantsText}>No Restaurants Found</div>}
+                        : <div className={classes.noRestaurantsText}>{this.state.userSearch ? 'No Restaurants with the given name' : 'No Restaurants Found'}</div>}
                 </div>
             </div>
         )
