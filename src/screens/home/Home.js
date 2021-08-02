@@ -25,13 +25,13 @@ const styles = theme => ({
         padding: '0px 15px !important',
         margin: '15px 0px',
         width : 'auto',
+        height : '380px',
+        maxHeight : '380px',
     },
     restaurantCard: {
         cursor: 'pointer',
         border: '1px solid #e2e2e1',
         boxShadow: 'none',
-        height : '380px',
-        maxHeight : '380px'
     },
     noRestaurantsText: {
         textAlign: 'center',
@@ -98,8 +98,6 @@ class Home extends Component {
 
     //This is for Restaurants Filter on the UI side
     restaurantSearchHandler = (searchKey) => {
-        console.log("Entered here for restaurant filter");
-        console.log("Search Key : " + searchKey);
         let restaurantList = this.state.restaurantsCopy;
         if (searchKey === '') {
             restaurantList = this.state.restaurantsCopy;
@@ -123,7 +121,6 @@ class Home extends Component {
                     }
                 })
             }
-            console.log("Searched Stores Count : " + searchedRestaurants.length)
             restaurantList = searchedRestaurants
         }
         this.setState({
