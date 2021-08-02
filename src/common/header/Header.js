@@ -3,7 +3,6 @@ import { Component } from 'react';
 import './Header.css';
 import { withStyles } from '@material-ui/styles';
 import FastfoodIcon from '@material-ui/icons/Fastfood';
-import SearchIcon from '@material-ui/icons/Search';
 import Search from '@material-ui/icons/Search';
 import { Input } from '@material-ui/core';
 import { Button } from '@material-ui/core';
@@ -89,7 +88,7 @@ class Header extends Component {
                         </div>
                         </div>
                     )}
-                    <div class={classes.loginContainer}>
+                    <div className={classes.loginContainer}>
                         {!this.state.loggedIn ?
                             <div className={classes.loginBtnHolder}>
                                 <Button variant="contained" color="default" startIcon={<AccountCircle />}
