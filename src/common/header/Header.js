@@ -151,6 +151,7 @@ class Header extends Component {
             signupPasswordErrorMessage: "required",
             isSignupContactnoError: "dispNone",
             openSnackBar: false,
+            snackBarMessage : "",
             isLoginError: false,
             loginErrorMessage: "",
             loginErrorMessageRequired: "dispBlock",
@@ -254,7 +255,8 @@ class Header extends Component {
                     sessionStorage.setItem("first-name", loginResponse.first_name)
                     that.setState({
                         isLoggedIn: true,
-
+                        openSnackBar: true,
+                        snackBarMessage : 'Logged in successfully!'
                     });
                     that.closeModalHandler();
                 }
@@ -341,6 +343,7 @@ class Header extends Component {
                     that.setState({
                         value: 0,
                         openSnackBar: true,
+                        snackBarMessage : 'Registered successfully! Please login now!'
                     });
                     that.resetSignupForm();
                 }
@@ -631,7 +634,7 @@ class Header extends Component {
                         }
                         {this.state.SnackBarNotification ?
                             <SnackBarNotification open={this.state.openSnackBar} notificationCloseHandler={this.handleCloseSnackBar}
-                                message="Registered successfully! Please login now!"
+                                message={this.state.snackBarMessage}
                             />
                             :
                             null
