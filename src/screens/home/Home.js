@@ -96,34 +96,33 @@ class Home extends Component {
 
     //This is for Restaurants Filter on the UI side
     restaurantSearchHandler = (searchKey) => {
-        let restaurantList = this.state.restaurantsCopy;
-        if (searchKey === '') {
-            restaurantList = this.state.restaurantsCopy;
-        } else {
-            let restaurants = this.state.restaurantsCopy;
-            let searchedRestaurants = []
-            //Filter By Name
-            if (restaurants !== undefined && restaurants.length > 0) {
-                restaurants = restaurants.filter((restaurant) => {
-                    if (restaurant.restaurant_name !== undefined) {
-                        let name = restaurant.restaurant_name.toLowerCase();
-                        let enteredKey = searchKey.toLowerCase();
-                        if (name.includes(enteredKey)) {
-                            searchedRestaurants.push(restaurant);
-                            return true;
-                        } else {
-                            return false;
-                        }
-                    } else {
-                        return false;
-                    }
-                })
+        let restaurantsList = this.state.restaurantsCopy;
+        let that = this;
+        let filteredRestaurants = null;
+        let xhrFilteredRestaurants = new XMLHttpRequest();
+        xhrFilteredRestaurants.addEventListener("readystatechange", function () {
+            if (this.readyState === 4) {
+                if (!JSON.parse(this.responseText).restaurants) {
+                    that.setState({
+                        restaurants: null
+                    });
+                } else {
+                    that.setState({
+                        restaurants: JSON.parse(this.responseText).restaurants
+                    });
+                }
             }
-            restaurantList = searchedRestaurants
+        });
+        if (searchKey === '') {
+            that.setState({
+                restaurants: restaurantsList
+            });
+        } else {
+            let url = this.props.baseUrl + 'restaurant/name/' + searchKey;
+            xhrFilteredRestaurants.open("GET", url);
+            xhrFilteredRestaurants.send(filteredRestaurants);
         }
-        this.setState({
-            restaurants: restaurantList
-        })
+
     };
 
     //To go to a restaurant
