@@ -166,6 +166,7 @@ class Details extends Component {
                 that.setState({
                     restaurant: restaurant,
                     categories: restaurant.categories,
+                    orderItems: { id: restaurant.id },
                 });
             }
         });
@@ -284,7 +285,7 @@ class Details extends Component {
             this.setState({ notloggedIn: true });
         } else {
             this.props.history.push({
-                pathname: '/checkout/',
+                pathname: '/checkout',
                 state: {
                     orderItems: this.state.orderItems,
                     total: this.state.totalAmount, restaurantName: this.state.restaurant_name
@@ -311,7 +312,7 @@ class Details extends Component {
             <div>
                 <Header title="Food Ordering App" showSearchBox={false} history={this.props.history} restaurantSearchHandler={this.restaurantSearchHandler} />
                 <div className={classes.restaurantContainer}>
-                    {this.state.restaurant !== null ?
+                    {restaurant !== null && restaurant !== undefined && this.state.restaurant !== undefined &&  this.state.restaurant !== null ?
                         <div className={classes.restaurantDetailsHolder}>
                             <div className={classes.restaurantInfoHolder}>
                                 <div className={classes.restaurantImageHolder}>
@@ -322,14 +323,16 @@ class Details extends Component {
                                         {restaurant.restaurant_name}
                                     </div>
                                     <div className={classes.restaurantLocalityHolder}>
-                                        {restaurant.address.locality.toUpperCase()}
+                                        {restaurant.address !== undefined ? restaurant.address.locality.toUpperCase() : ""}
                                     </div>
-                                    <div className={classes.restaurantCategoriesHolder}>
-                                        {categories.forEach(category => {
-                                            restaurantCategories += category.category_name + ",";
-                                        })}
-                                        {restaurantCategories.substring(0, restaurantCategories.length - 1)}
-                                    </div>
+                                    {categories !== undefined ?
+                                        <div className={classes.restaurantCategoriesHolder}>
+                                            {categories.forEach(category => {
+                                                restaurantCategories += category.category_name + ",";
+                                            })}
+                                            {restaurantCategories.substring(0, restaurantCategories.length - 1)}
+                                        </div>
+                                        : null}
                                     <div className={classes.ratingAndPriceHolder}>
                                         <div className={classes.avgRatingHolder}>
                                             <div className={classes.customerRatingDisplay}>
@@ -352,7 +355,7 @@ class Details extends Component {
                             </div>
                             <div className={classes.restaurantItemsHolder}>
                                 <div className={classes.restaurantMenuItemsHolder}>
-                                    {this.state.categories.map(category => (
+                                    {this.state.categories !== undefined ? this.state.categories.map(category => (
                                         <div className={classes.categoryHolder} key={"category" + category.id}>
                                             <span>{category.category_name.toUpperCase()}</span>
                                             <Divider className={classes.categoryDivider} />
@@ -395,7 +398,7 @@ class Details extends Component {
                                             )}
                                         </div>
                                     )
-                                    )}
+                                    ) :  null}
                                 </div>
                                 <div className={classes.restaurantCartHolder}>
                                     <Card>
