@@ -7,7 +7,7 @@ import { Card, CardActionArea, CardContent, CardMedia, ImageList, Typography } f
 import { ImageListItem } from '@material-ui/core';
 
 const styles = theme => ({
-    restaurantDetailsHolder: {
+    restaurantsDetailsHolder: {
         margin: '0px',
         width: '100%',
         display: 'flex',
@@ -32,7 +32,7 @@ const styles = theme => ({
     },
     noRestaurantsText: {
         textAlign: 'center',
-        padding: '20px',
+        padding: '20px 0px',
     },
     cardContentHolder: {
         padding: '18px',
@@ -135,7 +135,7 @@ class Home extends Component {
         return (
             <div>
                 <Header title="Food Ordering App" showSearchBox={true} history={this.props.history} restaurantSearchHandler={this.restaurantSearchHandler} />
-                <div className={classes.restaurantDetailsHolder}>
+                <div className={classes.restaurantsDetailsHolder}>
                     {this.state.restaurants !== null && this.state.restaurants.length > 0 ?
                         <ImageList rowHeight={'auto'} className={classes.imageListHolder} cols={4}>
                             {this.state.restaurants.map((restaurant, index) => (
