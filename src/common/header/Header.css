@@ -1,4 +1,10 @@
 /* Header CSS */
+.Header-FormControl-25{
+	width: 95%;
+}
+.responseErrorHolder{
+	max-width: 320px;
+}
 .dispBlock {
 	display: block;
 }

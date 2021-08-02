@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import '../header/Header.css'
 import { withStyles, ThemeProvider } from '@material-ui/core/styles';
-import { AccountCircle } from '@material-ui/icons';
+import { AccountCircle, DriveEta } from '@material-ui/icons';
 import AppBar from '@material-ui/core/AppBar';
 import { Button } from '@material-ui/core';
 import FastfoodIcon from '@material-ui/icons/Fastfood';
@@ -555,9 +555,11 @@ class Header extends Component {
                                         onChange={this.contactnoInputChangeHandler}
                                         value={this.state.contactno}
                                     />
-                                    <FormHelperText className={this.state.isLoginContactnoError}>
-                                        <span className='redError'>{this.state.loginContactnoErrorMeassage}</span>
-                                    </FormHelperText>
+                                    <div className="responseErrorHolder">
+                                        <FormHelperText className={this.state.isLoginContactnoError}>
+                                            <span className='redError'>{this.state.loginContactnoErrorMeassage}</span>
+                                        </FormHelperText>
+                                    </div>
                                 </FormControl><br /><br />
                                 <FormControl className={classes.FormControl} required>
                                     <InputLabel htmlFor="password">Password</InputLabel>
@@ -565,14 +567,17 @@ class Header extends Component {
                                         onChange={this.passwordInputChangeHandler}
                                         value={this.state.password}
                                     />
-                                    <FormHelperText className={this.state.isloginPasswordError}>
-                                        <span className='redError'>{this.state.loginPasswordErrorMessage}</span>
-                                    </FormHelperText>
+                                    <div className="responseErrorHolder">
+                                        <FormHelperText className={this.state.isloginPasswordError}>
+                                            <span className='redError'>{this.state.loginPasswordErrorMessage}</span>
+                                        </FormHelperText>
+                                    </div>
+                                </FormControl>
+                                <div className="responseErrorHolder">
                                     <FormHelperText className={this.state.loginErrorMessageRequired}>
                                         <span className='redError'>{this.state.loginErrorMessage}</span>
                                     </FormHelperText>
-
-                                </FormControl><br /><br />
+                                </div><br /><br />
                                 <Button variant='contained' color='primary'
                                     style={{ textAlign: 'center' }}
                                     onClick={this.loginValidationHandler}
@@ -590,9 +595,11 @@ class Header extends Component {
                                         onChange={this.firstnameInputChangeHandler}
                                         value={this.state.firstname}
                                     />
-                                    <FormHelperText className={this.state.firstnameRequired}>
-                                        <span className="redError">required</span>
-                                    </FormHelperText>
+                                    <div className="responseErrorHolder">
+                                        <FormHelperText className={this.state.firstnameRequired}>
+                                            <span className="redError">required</span>
+                                        </FormHelperText>
+                                    </div>
                                 </FormControl><br /><br />
                                 <FormControl className={classes.FormControl}>
                                     <InputLabel htmlFor="lastname">Last Name</InputLabel>
@@ -607,9 +614,11 @@ class Header extends Component {
                                         onChange={this.emailInputChangeHandler}
                                         value={this.state.email}
                                     />
-                                    <FormHelperText className={this.state.isSignupEmailError}>
-                                        <span className="redError" >{this.state.signupEmailErrorMessage}</span>
-                                    </FormHelperText>
+                                    <div className="responseErrorHolder">
+                                        <FormHelperText className={this.state.isSignupEmailError}>
+                                            <span className="redError" >{this.state.signupEmailErrorMessage}</span>
+                                        </FormHelperText>
+                                    </div>
                                 </FormControl><br /><br />
                                 <FormControl className={classes.FormControl} required>
                                     <InputLabel htmlFor="passwordregister">Password</InputLabel>
@@ -617,9 +626,11 @@ class Header extends Component {
                                         onChange={this.passwordRegisterInputChangeHandler}
                                         value={this.state.passwordregister}
                                     />
-                                    <FormHelperText className={this.state.isSignupPasswordError}>
-                                        <span className="redError">{this.state.signupPasswordErrorMessage}</span>
-                                    </FormHelperText>
+                                    <div className="responseErrorHolder">
+                                        <FormHelperText className={this.state.isSignupPasswordError}>
+                                            <span className="redError">{this.state.signupPasswordErrorMessage}</span>
+                                        </FormHelperText>
+                                    </div>
                                 </FormControl><br /><br />
                                 <FormControl className={classes.FormControl} required>
                                     <InputLabel htmlFor="contactNoSignup">Contact No</InputLabel>
@@ -627,13 +638,17 @@ class Header extends Component {
                                         onChange={this.contactNoSignupInputChangeHandler}
                                         value={this.state.contactNoSignup}
                                     />
-                                    <FormHelperText className={this.state.isSignupContactnoError}>
-                                        <span className="redError">{this.state.signupContactnoErrorMessage}</span>
-                                    </FormHelperText>
+                                    <div className="responseErrorHolder">
+                                        <FormHelperText className={this.state.isSignupContactnoError}>
+                                            <span className="redError">{this.state.signupContactnoErrorMessage}</span>
+                                        </FormHelperText>
+                                    </div>
+                                </FormControl>
+                                <div className="responseErrorHolder">
                                     <FormHelperText className={this.state.isSignUpError}>
                                         <span className='redError'>{this.state.signupErrorMessage}</span>
                                     </FormHelperText>
-                                </FormControl><br /><br />
+                                </div><br /><br />
                                 <Button id="registerButton" variant="contained" color="primary" onClick={this.registerValidationHandler}>Register</Button>
                             </TabContainer>
                         }
