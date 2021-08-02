@@ -263,7 +263,7 @@ class Header extends Component {
                         that.setState({
                             openSnackBar: false
                         })
-                    }, 1000);
+                    }, 500);
                 }
             }
         });
