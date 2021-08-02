@@ -74,7 +74,7 @@
 	margin: 0px;
 }
 
-@media ( min-width : 320px) and (max-width: 900px) {
+@media(max-width: 900px) {
 	.main-container {
 		height: 100vh;
 		display: block;
