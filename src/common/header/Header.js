@@ -85,12 +85,12 @@ class Header extends Component {
                         <div className={classes.searchContainer}>
                         <div className={classes.searchHolder}>
                             <Search />
-                            <Input placeholder="Search by Restaurant Name" onChange={this.props.searchChangeHandler} />
+                            <Input placeholder="Search by Restaurant Name" onChange={this.props.restaurantSearchHandler} />
                         </div>
                         </div>
                     )}
                     <div class={classes.loginContainer}>
-                        {this.state.loggedIn ?
+                        {!this.state.loggedIn ?
                             <div className={classes.loginBtnHolder}>
                                 <Button variant="contained" color="default" startIcon={<AccountCircle />}
                                     onClick={this.loginModalHolder}>
