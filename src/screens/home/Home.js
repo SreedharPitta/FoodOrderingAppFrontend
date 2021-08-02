@@ -140,7 +140,6 @@ class Home extends Component {
                         <ImageList rowHeight={'auto'} className={classes.imageListHolder} cols={4}>
                             {this.state.restaurants.map((restaurant, index) => (
                                 <ImageListItem key={'restaurant' + restaurant.id} className={classes.imageListItemHolder}>
-                                    {/* restaurant details card onclick redirects to restaurant details page*/}
                                     <Card className={classes.restaurantCard} onClick={() => this.restaurantViewDetailsHandler(restaurant.id)}>
                                         <CardActionArea>
                                             <CardMedia component="img" height={160} image={restaurant.photo_URL} title={restaurant.restaurant_name} />
