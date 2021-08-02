@@ -30,7 +30,7 @@ const styles = theme => ({
         flexGrow: 1,
     },
     appBar: {
-        backgroundColor: '#263238',
+        backgroundColor: '#253238',
         boxShadow: 'none',
     },
     root: {
@@ -151,7 +151,7 @@ class Header extends Component {
             signupPasswordErrorMessage: "required",
             isSignupContactnoError: "dispNone",
             openSnackBar: false,
-            snackBarMessage : "",
+            snackBarMessage: "",
             isLoginError: false,
             loginErrorMessage: "",
             loginErrorMessageRequired: "dispBlock",
@@ -256,9 +256,14 @@ class Header extends Component {
                     that.setState({
                         isLoggedIn: true,
                         openSnackBar: true,
-                        snackBarMessage : 'Logged in successfully!'
+                        snackBarMessage: 'Logged in successfully!'
                     });
-                    that.closeModalHandler();
+                    setTimeout(() => {
+                        that.closeModalHandler();
+                        that.setState({
+                            openSnackBar: false
+                        })
+                    }, 1000);
                 }
             }
         });
@@ -343,7 +348,7 @@ class Header extends Component {
                     that.setState({
                         value: 0,
                         openSnackBar: true,
-                        snackBarMessage : 'Registered successfully! Please login now!'
+                        snackBarMessage: 'Registered successfully! Please login now!'
                     });
                     that.resetSignupForm();
                 }
@@ -356,7 +361,7 @@ class Header extends Component {
         xhrSignup.send(signupData);
     }
 
-    handleCloseSnackBar = (_event, reason) => {
+    handleCloseSnackBar = () => {
         this.setState({ openSnackBar: false });
     };
 
@@ -500,7 +505,7 @@ class Header extends Component {
                                 </div>
                                 :
                                 <div className={classes.customerProifleBtn}>
-                                    <Button id="customer-profile" startIcon={<AccountCircle />}
+                                    <Button id="customerProfile" startIcon={<AccountCircle />}
                                         onClick={this.onProfileIconClick}
                                     >
                                         {sessionStorage.getItem("first-name")}
@@ -632,13 +637,9 @@ class Header extends Component {
                                 <Button id="registerButton" variant="contained" color="primary" onClick={this.registerValidationHandler}>Register</Button>
                             </TabContainer>
                         }
-                        {this.state.SnackBarNotification ?
-                            <SnackBarNotification open={this.state.openSnackBar} notificationCloseHandler={this.handleCloseSnackBar}
-                                message={this.state.snackBarMessage}
-                            />
-                            :
-                            null
-                        }
+                        <SnackBarNotification open={this.state.openSnackBar} notificationCloseHandler={this.handleCloseSnackBar}
+                            message={this.state.snackBarMessage}
+                        />
                     </div>
                 </Modal>
             </div>

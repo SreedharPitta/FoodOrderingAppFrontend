@@ -1,10 +1,4 @@
 /* Header CSS */
-.header-container {
-	display: flex;
-	background-color: darkgrey;
-	justify-content: space-between;
-}
-
 .dispBlock {
 	display: block;
 }
@@ -14,9 +8,9 @@
 }
 
 .redError {
-	color: red;
+	color: #ff0000;
 }
 
-#customer-profile {
-	color: white;
+#customerProfile {
+	color: #fff;
 }
