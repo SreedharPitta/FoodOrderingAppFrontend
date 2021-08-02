@@ -84,7 +84,7 @@ class Header extends Component {
                         <div className={classes.searchContainer}>
                         <div className={classes.searchHolder}>
                             <Search />
-                            <Input placeholder="Search by Restaurant Name" onChange={this.props.restaurantSearchHandler} />
+                            <Input placeholder="Search by Restaurant Name" onChange={(e) => { this.props.restaurantSearchHandler(e.target.value) }} />
                         </div>
                         </div>
                     )}

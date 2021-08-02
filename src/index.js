@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import Controller from "../src/common/Controller";
+import 'font-awesome/css/font-awesome.min.css';
 
 ReactDOM.render(<Controller />, document.getElementById('root'));
 
