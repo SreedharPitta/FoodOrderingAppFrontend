@@ -7,26 +7,23 @@ import { Card, CardActionArea, CardContent, CardMedia, ImageList, Typography } f
 import { ImageListItem } from '@material-ui/core';
 
 const styles = theme => ({
-    restaurantDetailsHolder : {
+    restaurantDetailsHolder: {
+        margin: '0px',
+        width: '100%',
         display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'column',
-        margin: '0px auto',
-        width : '100%',
     },
     imageListHolder: {
         margin: '0px !important',
-        padding: '0px',
+        padding: '0px 12px',
         justifyContent: 'flex-start',
-        width : '100%',
+        width: '100%',
     },
     imageListItemHolder: {
         padding: '0px 15px !important',
         margin: '15px 0px',
-        width : 'auto',
-        height : '380px',
-        maxHeight : '380px',
+        width: 'auto',
+        height: '380px',
+        maxHeight: '380px',
     },
     restaurantCard: {
         cursor: 'pointer',
@@ -62,7 +59,7 @@ const styles = theme => ({
         padding: '5px',
     },
     restaurantPriceHolder: {
-        fontWeight : '500',
+        fontWeight: '500',
     }
 });
 
@@ -140,7 +137,7 @@ class Home extends Component {
                 <Header title="Food Ordering App" showSearchBox={true} history={this.props.history} restaurantSearchHandler={this.restaurantSearchHandler} />
                 <div className={classes.restaurantDetailsHolder}>
                     {this.state.restaurants !== null && this.state.restaurants.length > 0 ?
-                        <ImageList rowHeight={'auto'}  className={classes.imageListHolder} cols={4}> 
+                        <ImageList rowHeight={'auto'} className={classes.imageListHolder} cols={4}>
                             {this.state.restaurants.map((restaurant, index) => (
                                 <ImageListItem key={'restaurant' + restaurant.id} className={classes.imageListItemHolder}>
                                     {/* restaurant details card onclick redirects to restaurant details page*/}
