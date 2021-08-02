@@ -1,0 +1,85 @@
+/* Restaurant Details Page CSS */
+.restaurantInfoHolder {
+	padding: 25px;
+	display: inline-flex;
+	align-items: center;
+}
+
+.restaurantAddlInfoHolder {
+	padding-left: 75px;
+}
+
+.avgPriceHolder {
+	margin-left: 300px;
+	max-width: 145px;
+}
+
+.restaurantImage {
+	width: 300px;
+	height: 200px;
+}
+
+.restaurantItemsHolder {
+	background-color: #fff;
+	padding: 35px 75px;
+	display: inline-flex;
+}
+
+.restaurantMenuItemsHolder {
+	width: 50%;
+	line-height: 32px;
+	font-size: 14px;
+}
+
+.restaurantCartHolder {
+	width: 42%;
+	padding-left: 8%;
+}
+
+@media ( min-width : 600px) and (max-width : 990px) {
+	.restaurantAddlInfoHolder {
+		padding-left: 30px;
+	}
+	.avgPriceHolder {
+		margin-left: 200px;
+	}
+	.restaurantImage {
+		width: 180px;
+		height: 150px;
+	}
+	.restaurantItemsHolder {
+		padding: 20px 25px;
+	}
+	.restaurantCartHolder {
+		width: 47%;
+		padding-left: 3%;
+	}
+}
+
+@media ( max-width : 599px) {
+	.restaurantInfoHolder {
+		padding: 15px;
+		display: block;
+		text-align: center;
+	}
+	.restaurantAddlInfoHolder {
+		padding-left: 0px;
+	}
+	.avgPriceHolder {
+		margin-left: 10%;
+	}
+	.restaurantItemsHolder {
+		padding: 10px 10px 10px 10%;
+		display: block;
+	}
+	.restaurantMenuItemsHolder {
+		width: 100%;
+		line-height: 32px;
+		font-size: 14px;
+	}
+	.restaurantCartHolder {
+		width: 90%;
+		padding-left: 0%;
+		margin-top: 25px;
+	}
+}

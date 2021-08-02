@@ -15,21 +15,6 @@ const styles = theme => ({
     restaurantDetailsHolder: {
         padding: '0px',
     },
-    restaurantInfoHolder: {
-        padding: '25px',
-        display: 'inline-flex',
-        alignItems: 'center',
-    },
-    restaurantImageHolder: {
-
-    },
-    restaurantImage: {
-        width: '300px',
-        height: '200px',
-    },
-    restaurantAddlInfoHolder: {
-        paddingLeft: '75px',
-    },
     restaurantNameHolder: {
         fontSize: '30px',
         fontWeight: '500',
@@ -59,10 +44,6 @@ const styles = theme => ({
         color: 'gray',
         fontSize: '12px',
     },
-    avgPriceHolder: {
-        marginLeft: '300px',
-        maxWidth: '145px'
-    },
     customerPriceDisplay: {
         marginBottom: '5px',
         paddingLeft: '5px'
@@ -70,16 +51,6 @@ const styles = theme => ({
     customerPriceText: {
         color: 'gray',
         fontSize: '12px',
-    },
-    restaurantItemsHolder: {
-        backgroundColor: '#fff',
-        padding: '35px 75px',
-        display: 'inline-flex',
-    },
-    restaurantMenuItemsHolder: {
-        width: '50%',
-        lineHeight: '32px',
-        fontSize: '14px',
     },
     categoryDivider: {
         marginBottom: '15px',
@@ -101,10 +72,6 @@ const styles = theme => ({
     itemPrice: {
         fontSize: '15px',
         fontWeight: '500',
-    },
-    restaurantCartHolder: {
-        width: '42%',
-        paddingLeft: '8%',
     },
     badge: {
         zIndex: '0',
@@ -312,13 +279,13 @@ class Details extends Component {
             <div>
                 <Header title="Food Ordering App" showSearchBox={false} history={this.props.history} restaurantSearchHandler={this.restaurantSearchHandler} />
                 <div className={classes.restaurantContainer}>
-                    {restaurant !== null && restaurant !== undefined && this.state.restaurant !== undefined &&  this.state.restaurant !== null ?
+                    {restaurant !== null && restaurant !== undefined && this.state.restaurant !== undefined && this.state.restaurant !== null ?
                         <div className={classes.restaurantDetailsHolder}>
-                            <div className={classes.restaurantInfoHolder}>
+                            <div className="restaurantInfoHolder">
                                 <div className={classes.restaurantImageHolder}>
-                                    <img className={classes.restaurantImage} src={restaurant.photo_URL} alt={restaurant.restaurant_name} />
+                                    <img className="restaurantImage" src={restaurant.photo_URL} alt={restaurant.restaurant_name} />
                                 </div>
-                                <div className={classes.restaurantAddlInfoHolder}>
+                                <div className="restaurantAddlInfoHolder">
                                     <div className={classes.restaurantNameHolder}>
                                         {restaurant.restaurant_name}
                                     </div>
@@ -342,7 +309,7 @@ class Details extends Component {
                                                 AVERAGE RATING BY <span>{restaurant.number_customers_rated}</span> CUSTOMERS
                                             </div>
                                         </div>
-                                        <div className={classes.avgPriceHolder}>
+                                        <div className="avgPriceHolder">
                                             <div className={classes.customerPriceDisplay}>
                                                 <i className="fa fa-inr"></i> {restaurant.average_price}
                                             </div>
@@ -353,8 +320,8 @@ class Details extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className={classes.restaurantItemsHolder}>
-                                <div className={classes.restaurantMenuItemsHolder}>
+                            <div className="restaurantItemsHolder">
+                                <div className="restaurantMenuItemsHolder">
                                     {this.state.categories !== undefined ? this.state.categories.map(category => (
                                         <div className={classes.categoryHolder} key={"category" + category.id}>
                                             <span>{category.category_name.toUpperCase()}</span>
@@ -398,9 +365,9 @@ class Details extends Component {
                                             )}
                                         </div>
                                     )
-                                    ) :  null}
+                                    ) : null}
                                 </div>
-                                <div className={classes.restaurantCartHolder}>
+                                <div className="restaurantCartHolder">
                                     <Card>
                                         <CardContent>
                                             <div style={{ fontWeight: "bold" }}>
