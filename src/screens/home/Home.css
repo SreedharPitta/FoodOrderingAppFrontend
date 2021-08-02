@@ -1,1 +1,28 @@
- /* App Home Page CSS */
+/* App Home Page CSS */
+@media ( max-width : 575px) {
+	.Home-imageListItemHolder-3 {
+		width: 100% !important;
+	}
+}
+
+@media ( min-width : 576px) and (max-width: 991px) {
+	.Home-imageListItemHolder-3 {
+		width: 50% !important;
+	}
+	.MuiTypography-subtitle1 {
+		font-size: 15px !important;
+		line-height: 22px !important;
+	}
+	.Home-restaurantCategoriesHolder-8 {
+		margin-bottom: 22px !important;
+	}
+	.Home-imageListItemHolder-3 {
+		padding: 0px 5px !important;
+	}
+}
+
+@media ( min-width : 992px) and (max-width: 1200px) {
+	.Home-imageListItemHolder-3 {
+		width: 33.3% !important;
+	}
+}

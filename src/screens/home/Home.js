@@ -22,13 +22,14 @@ const styles = theme => ({
         padding: '0px 15px !important',
         margin: '15px 0px',
         width: 'auto',
-        height: '380px',
-        maxHeight: '380px',
+        height: '380px !important',
+        maxHeight: '380px !important',
     },
     restaurantCard: {
         cursor: 'pointer',
         border: '1px solid #e2e2e1',
         boxShadow: 'none',
+        height: '98%',
     },
     noRestaurantsText: {
         textAlign: 'center',
